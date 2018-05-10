@@ -2,7 +2,11 @@
   "name": "ng-dom-image-capture",
   "version": "0.0.1",
   "license": "MIT",
-  "scripts": {
+   "repository": {
+    "type": "git",
+    "url": "https://github.com/sarath-sasikumar/ng-dom-image-capture.git"
+  },
+  "scripts": {  
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
