@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/sarath-sasikumar/ng-dom-image-capture.git"
   },
-  "scripts": {  
+  "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
