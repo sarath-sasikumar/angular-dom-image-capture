@@ -1,6 +1,6 @@
 import {Directive, ElementRef, HostListener, Input, Output, EventEmitter} from "@angular/core";
 import {Subject} from "rxjs/Subject";
-import * as domtoimage from "dom-to-image";
+import DomToImage from "./domToImage/domToImage";
 
 import Event from "./event";
 
@@ -94,9 +94,10 @@ export default class CaptureDirective {
      *
      * @param : the node which is to be converted to image
      */
-    public convertNodeToImage(node: Node): Promise<string | undefined> {
+    public convertNodeToImage(node: any): Promise<string | undefined> {
         if (this.type === "image/jpeg") {
-            return domtoimage.toJpeg(node,
+            const domToImage=new DomToImage();
+            return domToImage.toJpeg(node,
                 {
                     filter: function (element: HTMLElement) {
                         if (element.getAttribute && element.getAttribute("captureExclude") === "") {
