@@ -9,11 +9,16 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "packagr": "ng-packagr -p ng-package.json"
+    "packagr": "ng-packagr -p ng-package.json",
+    "cleanup": "rimraf dist/bundles dist/src dist/index.d.ts dist/index.js dist/index.js.map dist/LICENCE dist/README.md",
+    "bundling": "rollup -c",
+    "minify": "uglifyjs dist/bundles/ng-dom-image-capture.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/ng-dom-image-capture.umd.min.js",
+    "build": "npm run cleanup && ngc && npm run bundling && npm run minify",
+    "run": "ts-node ./src/index.ts",
+    "prepublishOnly": "tsc -p ./ --outDir dist/"
   },
   "private": false,
   "dependencies": {
@@ -32,6 +37,9 @@
   "devDependencies": {
     "@angular/cli": "~1.7.4",
     "@angular/compiler-cli": "^5.2.0",
+    "rimraf": "^2.5.4",
+    "rollup": "^0.37.0",
+    "uglify-js": "^2.7.5",
     "@angular/language-service": "^5.2.0",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",

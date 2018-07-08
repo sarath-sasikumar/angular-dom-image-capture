@@ -29,7 +29,7 @@ import Event from "./event";
     selector: "[capture]"
 })
 
-export default class CaptureDirective {
+export class CaptureDirective {
 
     /**
      * The output fomat of the node to be captured
