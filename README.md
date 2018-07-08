@@ -3,7 +3,7 @@
 
 This is an Angular directive which can be used with any particular tag and make it convertable to its base64 image equivalent.
 
-There is a dependency on the dom-to-image library which also needs to be installed. This will be removed in the future commits.
+This has been inspired from the dom-to-image library.
 
 The usage of the directive is as straightforward as it gets.
 
